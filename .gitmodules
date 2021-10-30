@@ -1,0 +1,3 @@
+[submodule "ESP32AMRadioTransmitter"]
+	path = ESP32AMRadioTransmitter
+	url = https://github.com/bitluni/ESP32AMRadioTransmitter
