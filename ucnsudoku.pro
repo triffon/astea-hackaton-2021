@@ -91,7 +91,7 @@ generateSudokuPuzzle(Attempt, Puzzle, Tries, MaxTries) :-
     random_between(0, 8, I),                % Generate random row
     random_between(0, 8, J),                % and random column
     forgetOne(Attempt, NewOne, I, J),       % forget the number there,
-    countSolutions(NewAttempt, 1), !,       % still unique solution,
+    countSolutions(NewOne, 1), !,           % still unique solution,
     Tries1 is Tries + 1,                    % increment tries
     generateSudokuPuzzle(NewOne, Puzzle,    % and
                          Tries1, MaxTries). % carry on.
