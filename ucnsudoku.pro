@@ -61,13 +61,12 @@ sudokuFirstRow(Row, Rows) :-       % We want
 
 % forget an element at an index I in a list
 forget([], [], _).
-forget([_|L1],[_|L2],0) :- !, forget(L1, L2, -1).
+forget([_|L],[_|L],0) :- !.
 forget([X|L1],[X|L2],I) :- I1 is I - 1, forget(L1, L2, I1).
 
 % forget an element at an index J in a list at an index I
 forgetOne([], [], _, _).
-forgetOne([X1|L1],[X2|L2],0,J) :- !, forget(X1,X2,J),
-                                     forgetOne(L1,L2,-1,J).
+forgetOne([X1|L],[X2|L],0,J) :- !, forget(X1,X2,J).
 forgetOne([X|L1],[X|L2],I,J)   :- I1 is I - 1, forgetOne(L1,L2,I1,J).
 
 % count Sudoku solutions (0, 1, or 2)
